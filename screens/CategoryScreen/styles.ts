@@ -45,5 +45,21 @@ export const styles = StyleSheet.create({
   },
   text: {
     color: 'white'
-  }
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 50,
+},
+emptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 50,
+},
+emptyText: {
+    fontSize: 16,
+    color: '#666',
+},
 });

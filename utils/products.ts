@@ -1,0 +1,162 @@
+export const products = [
+  {
+    id: 1,
+    name: "Lepakshi Handicrafts Leather Puppetry Lampshade 8inch",
+    description: "Leather Puppetry, also known as Tholu Bommalata or Shadow Play, is a traditional form of puppet theatre in Andhra Pradesh, India. The puppets are made from parchment leather created by treating goat skin with perforations and intricate designs.",
+    brand: "Lepakshi Handicrafts",
+    category: "Electronics",
+    subcategory: "Lamps & Lighting",
+    countryOfOrigin: "India",
+    size: "Standard",
+    netQuantity: "1 count",
+    productDimensions: "15L x 15W x 24H cm",
+    manufacturer: "Lepakshi Handicrafts Emporium",
+    price: 1299,
+    salePrice: 999,
+    discount: "23% OFF",
+    ratingValue: 4.5,
+    totalRating: 128,
+    images: [
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfddf738fb21802a062d56/61emq9hyypl-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfddf738fb21802a062d21/61bq83o8wol-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfddf738fb21802a062d59/61eyaa1naul-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfddf738fb21802a062d55/61ycus2uvol-800x800.jpg" }
+    ]
+  },
+  {
+    id: 2,
+    name: "Lepakshi Handicrafts Etikoppaka Six-in-One Female Doll Set",
+    description: "A handcrafted wooden nesting doll set that represents the traditional artistry of Etikoppaka village in Andhra Pradesh. The dolls are vibrantly painted, reflecting cultural richness and elegance.",
+    brand: "Lepakshi Handicrafts",
+   category: "Agri Inputs",
+    subcategory: "Wooden Dolls",
+    countryOfOrigin: "India",
+    size: "Standard",
+    netQuantity: "1 count",
+    productDimensions: "3 x 6 inches",
+    manufacturer: "Lepakshi Handicrafts Emporium",
+    price: 899,
+    salePrice: 699,
+    discount: "22% OFF",
+    ratingValue: 4.7,
+    totalRating: 95,
+    images: [
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdef5894829aadc3e0296/41n9tpiee9l-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdef6894829aadc3e02c6/41x-3gwwltl-800x800.jpg" }
+    ]
+  },
+  {
+    id: 3,
+    name: "Lepakshi Handicrafts Kondapalli Dancing Doll Medium",
+    description: "Traditional Kondapalli dancing dolls hand-painted with natural and non-toxic colors. A perfect decorative piece that showcases authentic Indian art and craftsmanship.",
+    brand: "Lepakshi Handicrafts",
+   category: "Agri Inputs",
+    subcategory: "Clay Dolls",
+    countryOfOrigin: "India",
+    size: "Standard",
+    netQuantity: "1 count",
+    manufacturer: "Lepakshi Handicrafts Emporium",
+    price: 799,
+    salePrice: 599,
+    discount: "25% OFF",
+    ratingValue: 4.6,
+    totalRating: 142,
+    images: [
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdde3843d9e8c7790a3cc/612ew5gqqjl-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdde3843d9e8c7790a3bb/51zcx-ubgjl-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdde3843d9e8c7790a3ad/51rejqs-vjl-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdde3843d9e8c7790a3bc/51gt6bittjl-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdde3843d9e8c7790a3be/512d9nia9kl-800x800.jpg" }
+    ]
+  },
+  {
+    id: 4,
+    name: "Lepakshi Handicrafts Etikoppaka Sannai Melam 6 Dolls Set",
+    description: "A handcrafted wooden depiction of a traditional Sannai Melam group celebrating Indian culture. Each figure is detailed with care, representing musical heritage and wooden artistry of Etikoppaka.",
+    brand: "Lepakshi Handicrafts",
+    category: "Agri Inputs",
+    subcategory: "Wooden Dolls",
+    countryOfOrigin: "India",
+    size: "Standard",
+    netQuantity: "1256 gram",
+    productDimensions: "31L x 15W x 12H cm",
+    manufacturer: "Lepakshi",
+    price: 2499,
+    salePrice: 1999,
+    discount: "20% OFF",
+    ratingValue: 4.8,
+    totalRating: 76,
+    images: [
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfde90c3e1551a81a2c3c7/817n-v7enql-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfde90c3e1551a81a2c3c5/81-uwjjq6wl-800x800.jpg" }
+    ]
+  },
+  {
+    id: 5,
+    name: "Lepakshi Handicrafts Kalamkari Block Print Saree (Mangalagiri Cotton Silk)",
+    description: "Pedana Kalamkari, also known as the Machilipatnam style, involves vegetable-dyed block printing on fabric. Made in Pedana, Andhra Pradesh, this saree reflects traditional artistry in Mangalagiri Cotton Silk.",
+    brand: "Lepakshi Handicrafts",
+category: "Ethnic Wear",
+    subcategory: "Saree",
+    countryOfOrigin: "India",
+    size: "Standard",
+    netQuantity: "1 count",
+    productDimensions: "1L x 1W x 1H cm",
+    manufacturer: "Lepakshi Handicrafts Emporium",
+    price: 3999,
+    salePrice: 2999,
+    discount: "25% OFF",
+    ratingValue: 4.9,
+    totalRating: 203,
+    images: [
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfddef38fb21802a062b75/717cynest4l-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfddef38fb21802a062b76/71dqxd-xq-l-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfddef38fb21802a062b74/71l8ev-pbcl-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfddee38fb21802a062b23/613r9ewp3cl-800x800.jpg" }
+    ]
+  },
+  {
+    id: 6,
+    name: "Lepakshi Handicrafts Kalamkari Block Print Scarf",
+    description: "A beautifully handcrafted Kalamkari block print scarf made using vegetable dyes. Originating from Pedana, this traditional Machilipatnam-style fabric highlights the artistic heritage of Andhra Pradesh.",
+    brand: "Lepakshi Handicrafts",
+   category: "Ethnic Wear",
+    subcategory: "Scarf",
+    countryOfOrigin: "India",
+    size: "Standard",
+    netQuantity: "1 count",
+    manufacturer: "Lepakshi Handicrafts Emporium",
+    price: 599,
+    salePrice: 449,
+    discount: "25% OFF",
+    ratingValue: 4.4,
+    totalRating: 87,
+    images: [
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfddd94ceb4c496297eada/71vlyjlha2l-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdddb4ceb4c496297eb07/717abwk2cnl-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfddda4ceb4c496297eaf5/71myuhbmdwl-800x800.jpg" },
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdddb4ceb4c496297eb0b/61otjqv6ypl-140x140.jpg" }
+    ]
+  },
+  {
+    id: 3,
+    name: "Lepakshi Handicrafts Kondapalli Dancing Doll Medium",
+    description: "Traditional Kondapalli dancing dolls hand-painted with natural and non-toxic colors. A perfect decorative piece that showcases authentic Indian art and craftsmanship.",
+    brand: "Lepakshi Handicrafts",
+    category: "Home & Kitchen",
+    subcategory: "Clay Dolls",
+    countryOfOrigin: "India",
+    size: "Standard",
+    netQuantity: "1 count",
+    manufacturer: "Lepakshi Handicrafts Emporium",
+    price: 1250,
+    offerPrice: 999,
+    images: [
+     { uri:  "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdde3843d9e8c7790a3cc/612ew5gqqjl-800x800.jpg"},
+      { uri: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdde3843d9e8c7790a3bb/51zcx-ubgjl-800x800.jpg"},
+    { uri:   "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdde3843d9e8c7790a3ad/51rejqs-vjl-800x800.jpg"},
+     { uri:  "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdde3843d9e8c7790a3bc/51gt6bittjl-800x800.jpg"},
+     { uri:  "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67cfdde3843d9e8c7790a3be/512d9nia9kl-800x800.jpg"}
+    ]
+  }
+];

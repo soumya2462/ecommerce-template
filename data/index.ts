@@ -1,5 +1,5 @@
 import { images } from "../constants";
-
+ 
 export const products = [{
     name: "Lepakshi Handicrafts Wooden Etikoppaka Six in One Dolls Female",
     // category: "Dorothy Perkins",
@@ -66,24 +66,28 @@ export const products = [{
     discount: '-20%'
 }
 ]
-
+ 
 export const banner = {
-    image: images.bigBanner,
-    text: "Fashion Sale",
+    image: images.banner,
+    text: "Lepakshi Handicrafts",
     buttonText: "check"
 }
-
+ 
 export const visualSearchBanner = {
     image: images.visualBanner,
     text: "Search for an outfit by taking a photo or uploading an image",
 }
-
+ 
 export const categories = [
     {
-        "name": "Women",
+        "name": "Handicrafts",
         "subcategories": [{
             "name": "Agri Inputs",
             "image": images.product17
+        },
+         {
+            "name": "Ethnic Wear",
+            "image": images.product19
         },
         {
             "name": "Electronics",
@@ -97,59 +101,60 @@ export const categories = [
             "name": "Home & Kitchen",
             "image": images.product16
         },
+       
         ]
     },
-    {
-        "name": "Men",
-        "subcategories": [
-            {
-                "name": "New",
-                "image": null
-            },
-            {
-                "name": "Clothing",
-                "image": null
-            },
-            {
-                "name": "Shoes",
-                "image": null
-            },
-            {
-                "name": "Accessories",
-                "image": null
-            }
-        ]
-    },
-    {
-        "name": "Kids",
-        "subcategories": [
-            {
-                "name": "New",
-                "image": null
-            },
-            {
-                "name": "Boys",
-                "image": null
-            },
-            {
-                "name": "Girls",
-                "image": null
-            },
-            {
-                "name": "Baby",
-                "image": null
-            },
-        ]
-    }
+    // {
+    //     "name": "Men",
+    //     "subcategories": [
+    //         {
+    //             "name": "New",
+    //             "image": null
+    //         },
+    //         {
+    //             "name": "Clothing",
+    //             "image": null
+    //         },
+    //         {
+    //             "name": "Shoes",
+    //             "image": null
+    //         },
+    //         {
+    //             "name": "Accessories",
+    //             "image": null
+    //         }
+    //     ]
+    // },
+    // {
+    //     "name": "Kids",
+    //     "subcategories": [
+    //         {
+    //             "name": "New",
+    //             "image": null
+    //         },
+    //         {
+    //             "name": "Boys",
+    //             "image": null
+    //         },
+    //         {
+    //             "name": "Girls",
+    //             "image": null
+    //         },
+    //         {
+    //             "name": "Baby",
+    //             "image": null
+    //         },
+    //     ]
+    // }
 ];
-
+ 
 export const categoryBanner = {
     title: "SALES",
     subTitle: "Up to 50% off"
 }
-
+ 
 export const tags = ["T-shirts", "Crop tops", "Blouses", "sport", "Light dress"]
-
+ 
 export const sortItems = [{
     id: "popularity",
     name: "Popular"
@@ -166,7 +171,7 @@ export const sortItems = [{
     id: "desc",
     name: "Price: highest to low"
 }]
-
+ 
 export const colors = [{
     color: 'black',
     selected: true
@@ -188,7 +193,7 @@ export const colors = [{
     color: 'blue',
     selected: false
 }];
-
+ 
 export const sizes = [{
     size: 'XS',
     selected: false
@@ -206,5 +211,5 @@ export const sizes = [{
     size: 'XL',
     selected: false
 }];
-
+ 
 export const productCategories = ["All", "Women", "Men", "Boys", "Girls"];

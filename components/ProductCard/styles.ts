@@ -2,18 +2,14 @@ import { StyleSheet } from 'react-native';
 
 export const styles = (width?) => StyleSheet.create({
     container: {
-        flexBasis: '44%',
+        flexBasis: '60%',
         borderRadius: 12,
-        elevation: 2,
         width,
-        shadowColor: "#777",
-        shadowOffset: {
-            height: 1,
-            width: 0
-        },
+        padding: 10,
         marginHorizontal: 10,
         marginVertical: 10,
         justifyContent: "flex-start",
+        backgroundColor:"#fff"
     },
     imageContainer: {
         flex: 1,
@@ -30,7 +26,6 @@ export const styles = (width?) => StyleSheet.create({
     star: {
         flexDirection: "row",
         alignContent: "center"
-
     },
     text: {
         marginTop: 2,

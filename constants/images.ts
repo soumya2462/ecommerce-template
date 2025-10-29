@@ -20,14 +20,31 @@ const product16 = require("../assets/products/product16.png");
 const product13 = require("../assets/products/product13.png");
 const product17 = require("../assets/products/product17.png");
 const product18 = require("../assets/products/electronics.png");
-
-
+const product19 = require("../assets/products/ethnicwear.png");
+const banner = require("../assets/banner/handicrafts.png");
 export default {
-    bigBanner,
-    product1,
-    product2,
-    product3,
-    visualBanner,
-    image1, image2, image3, image4,
-    product10,product11,product101,product102,product111,product112,product1012,product13,product14,product15,product16,product17,product18
+  bigBanner,
+  product1,
+  product2,
+  product3,
+  visualBanner,
+  image1,
+  image2,
+  image3,
+  image4,
+  product10,
+  product11,
+  product101,
+  product102,
+  product111,
+  product112,
+  product1012,
+  product13,
+  product14,
+  product15,
+  product16,
+  product17,
+  product18,
+  product19,
+  banner,
 };
