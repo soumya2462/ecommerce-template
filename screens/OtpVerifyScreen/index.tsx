@@ -10,6 +10,7 @@ import {
   ScrollView,
   Alert,
   StatusBar,
+  Dimensions,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -17,8 +18,10 @@ import { RootStackParamList } from '../../navigations/RootNavigator';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'OTPVerification'>;
 
+const { width } = Dimensions.get('window');
+
 const OTPVerificationScreen: React.FC<Props> = ({ navigation }) => {
-  const [otp, setOtp] = useState(['', '', '', '', '', '']);
+  const [otp, setOtp] = useState(['', '', '', '', '']);
   const [isResending, setIsResending] = useState(false);
   const inputRefs = useRef<Array<TextInput | null>>([]);
 
@@ -27,7 +30,7 @@ const OTPVerificationScreen: React.FC<Props> = ({ navigation }) => {
       const newOtp = [...otp];
       newOtp[index] = value;
       setOtp(newOtp);
-      if (value && index < 5) inputRefs.current[index + 1]?.focus();
+      if (value && index < 4) inputRefs.current[index + 1]?.focus();
     }
   };
 
@@ -39,10 +42,10 @@ const OTPVerificationScreen: React.FC<Props> = ({ navigation }) => {
 
   const handleVerify = () => {
     const otpCode = otp.join('');
-    if (otpCode.length === 6) {
+    if (otpCode.length === 5) {
       navigation.replace('MainApp');
     } else {
-      Alert.alert('Incomplete OTP', 'Please enter all 6 digits');
+      Alert.alert('Incomplete OTP', 'Please enter all 5 digits');
     }
   };
 
@@ -61,72 +64,82 @@ const OTPVerificationScreen: React.FC<Props> = ({ navigation }) => {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.container}
       >
-        <ScrollView contentContainerStyle={styles.scrollContent}>
-          <View style={styles.headerContainer}>
-            <TouchableOpacity
-              style={styles.backCircle}
-              onPress={() => navigation.goBack()}
-              activeOpacity={0.8}
-            >
-              <Ionicons name="chevron-back" size={22} color="#DB3022" />
-            </TouchableOpacity>
+        <ScrollView 
+          contentContainerStyle={styles.scrollContent}
+          showsVerticalScrollIndicator={false}
+        >
+          {/* Back Button */}
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={() => navigation.goBack()}
+            activeOpacity={0.8}
+          >
+            <Ionicons name="arrow-back" size={24} color="#222" />
+          </TouchableOpacity>
 
-            <View style={styles.headerTextContainer}>
-              <Text style={styles.headerTitle}>OTP Verification</Text>
-              <Text style={styles.headerSubtitle}>
-                Enter the 6-digit code sent to your email
-              </Text>
+          {/* Centered Content */}
+          <View style={styles.centerContent}>
+            {/* Icon Circle */}
+            <View style={styles.iconCircle}>
+              <Ionicons name="mail-outline" size={48} color="#DB3022" />
             </View>
-          </View>
 
-          {/* --- OTP Inputs --- */}
-          <View style={styles.form}>
+            {/* Header */}
+            <Text style={styles.title}>Verification Code</Text>
+            <Text style={styles.subtitle}>
+              We've sent a 5-digit code to your email{'\n'}
+              Please enter it below to verify
+            </Text>
+
+            {/* OTP Inputs */}
             <View style={styles.otpContainer}>
               {otp.map((digit, index) => (
-                <TextInput
-                  key={index}
-                  ref={(ref) => (inputRefs.current[index] = ref)}
-                  style={[
-                    styles.otpInput,
-                    digit ? styles.otpInputFilled : undefined,
-                  ]}
-                  value={digit}
-                  onChangeText={(value) => handleOtpChange(value, index)}
-                  onKeyPress={(e) => handleKeyPress(e, index)}
-                  keyboardType="number-pad"
-                  maxLength={1}
-                  selectTextOnFocus
-                  autoFocus={index === 0}
-                />
+                <View key={index} style={styles.otpWrapper}>
+                  <TextInput
+                    ref={(ref) => (inputRefs.current[index] = ref)}
+                    style={[
+                      styles.otpInput,
+                      digit ? styles.otpInputFilled : undefined,
+                    ]}
+                    value={digit}
+                    onChangeText={(value) => handleOtpChange(value, index)}
+                    onKeyPress={(e) => handleKeyPress(e, index)}
+                    keyboardType="number-pad"
+                    maxLength={1}
+                    selectTextOnFocus
+                    autoFocus={index === 0}
+                  />
+                  {digit && <View style={styles.otpDot} />}
+                </View>
               ))}
             </View>
 
-            {/* --- Resend Button --- */}
-            <TouchableOpacity
-              style={styles.resendButton}
-              onPress={handleResend}
-              disabled={isResending}
-              activeOpacity={0.7}
-            >
-              <Text style={styles.resendText}>
-                Didn’t receive the code?{' '}
+            {/* Resend Section */}
+            <View style={styles.resendContainer}>
+              <Text style={styles.resendText}>Didn't receive the code?</Text>
+              <TouchableOpacity
+                onPress={handleResend}
+                disabled={isResending}
+                activeOpacity={0.7}
+              >
                 <Text style={styles.resendLink}>
-                  {isResending ? 'Sending...' : 'Resend'}
+                  {isResending ? 'Sending...' : 'Resend Code'}
                 </Text>
-              </Text>
-            </TouchableOpacity>
+              </TouchableOpacity>
+            </View>
 
-            {/* --- Verify Button --- */}
+            {/* Verify Button */}
             <TouchableOpacity
               style={[
                 styles.verifyButton,
-                otp.join('').length !== 6 && styles.verifyButtonDisabled,
+                otp.join('').length !== 5 && styles.verifyButtonDisabled,
               ]}
               onPress={handleVerify}
-              disabled={otp.join('').length !== 6}
-              activeOpacity={0.85}
+              disabled={otp.join('').length !== 5}
+              activeOpacity={0.9}
             >
-              <Text style={styles.verifyButtonText}>VERIFY CODE</Text>
+              <Text style={styles.verifyButtonText}>Verify & Continue</Text>
+              <Ionicons name="arrow-forward" size={20} color="#FFF" style={styles.buttonIcon} />
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -139,106 +152,141 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFFFFF',
+    paddingHorizontal:10
   },
   scrollContent: {
     flexGrow: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 24,
   },
-
-  headerContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 50,
-    marginBottom: 50,
-  },
-  backCircle: {
-    width: 42,
-    height: 42,
-    borderRadius: 21,
-    borderWidth: 1.5,
-    borderColor: '#DB3022',
+  backButton: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: '#F5F5F5',
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 14,
+    marginTop: 20,
+    marginBottom: 20,
   },
-  headerTextContainer: {
+  centerContent: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingBottom: 40,
   },
-  headerTitle: {
-    fontSize: 26,
+  iconCircle: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    backgroundColor: '#FFEBEE',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 32,
+    shadowColor: '#DB3022',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 5,
+  },
+  title: {
+    fontSize: 32,
     fontWeight: '800',
-    color: '#DB3022',
+    color: '#222',
+    marginBottom: 12,
+    textAlign: 'center',
   },
-  headerSubtitle: {
-    fontSize: 14,
+  subtitle: {
+    fontSize: 15,
     color: '#777',
-    marginTop: 4,
-  },
-
-  form: {
-    flex: 1,
+    textAlign: 'center',
+    lineHeight: 22,
+    marginBottom: 48,
+    paddingHorizontal: 20,
   },
   otpContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginBottom: 40,
+    gap: 12,
+  },
+  otpWrapper: {
+    position: 'relative',
   },
   otpInput: {
-    width: 52,
-    height: 64,
-    borderRadius: 14,
+    width: 56,
+    height: 68,
+    borderRadius: 16,
     backgroundColor: '#F9F9F9',
     textAlign: 'center',
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: '700',
     color: '#222',
-    borderWidth: 1.5,
-    borderColor: '#E5E5E5',
+    borderWidth: 2,
+    borderColor: '#E8E8E8',
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.08,
-    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 8,
     elevation: 2,
   },
   otpInputFilled: {
     borderColor: '#DB3022',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFF',
+    transform: [{ scale: 1.02 }],
   },
-
-  resendButton: {
+  otpDot: {
+    position: 'absolute',
+    bottom: 16,
+    alignSelf: 'center',
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: '#DB3022',
+  },
+  resendContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 32,
+    marginBottom: 48,
+    gap: 6,
   },
   resendText: {
-    fontSize: 14,
-    color: '#777',
+    fontSize: 15,
+    color: '#999',
   },
   resendLink: {
+    fontSize: 15,
     color: '#DB3022',
     fontWeight: '700',
   },
-
   verifyButton: {
     backgroundColor: '#DB3022',
-    height: 56,
-    borderRadius: 28,
+    height: 58,
+    borderRadius: 29,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    width: width - 48,
+    maxWidth: 400,
     shadowColor: '#DB3022',
     shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.3,
-    shadowRadius: 10,
-    elevation: 8,
+    shadowOpacity: 0.35,
+    shadowRadius: 16,
+    elevation: 10,
   },
   verifyButtonDisabled: {
     backgroundColor: '#E8E8E8',
     shadowOpacity: 0,
+    elevation: 0,
   },
   verifyButtonText: {
     color: '#FFF',
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: '700',
-    letterSpacing: 1,
+    letterSpacing: 0.5,
+  },
+  buttonIcon: {
+    marginLeft: 8,
   },
 });
 
