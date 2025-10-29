@@ -62,6 +62,7 @@ const Category = ({ route, navigation }) => {
                             imageHeight={160}
                             label={product.discount}
                             badgeStyle={product.discount && { backgroundColor: theme.colors.error }}
+                            onPress={() => navigation.navigate('CategoryDetails', { product })}
                         />
                     ))}
                 </View>

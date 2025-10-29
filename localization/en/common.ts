@@ -35,4 +35,5 @@ export default {
     searchPhoto: 'Search by taking a photo',
     cropPhoto: 'Crop the item',
     findingResults: 'Finding similar results...',
+    categoryDetails: 'Category Details',
 };

@@ -1,40 +1,71 @@
 import { images } from "../constants";
 
 export const products = [{
-    name: "Evening Dress",
-    category: "Dorothy Perkins",
+    name: "Lepakshi Handicrafts Wooden Etikoppaka Six in One Dolls Female",
+    // category: "Dorothy Perkins",
     ratingValue: 3,
     totalRating: 10,
     salePrice: 12,
     price: 15,
     currency: "$",
-    image: images.product1
+    image: images.product10
 }, {
-    name: "Sport Dress",
-    category: "Sitily",
+    name: "Lepakshi Handicrafts Leather Puppetry Lamp Shades Flower Design",
+    // category: "Sitily",
     ratingValue: 5,
     totalRating: 2,
     salePrice: 22,
     price: 19,
     currency: "$",
-    image: images.product2,
+    image: images.product1012,
     discount: '-20%'
 }, {
-    name: "Sport Dress",
-    category: "Dorothy Perkins",
+    name: "Lepakshi Handicrafts Leather Puppetry Door & Wall Hangings Gowri Ganesh",
+    // category: "Dorothy Perkins",
     price: 14,
     currency: "$",
-    image: images.product3
+    image: images.product112
 }, {
-    name: "Light Blouse",
-    category: "Dorothy Perkins",
+    name: "Lepakshi Handicrafts Wooden Etikoppaka Natraj Ganapathi",
+    // category: "Dorothy Perkins",
     ratingValue: 4,
     totalRating: 50,
     price: 12,
     currency: "$",
-    image: images.product3,
+    image: images.product13,
     discount: '-20%'
-}]
+},
+{
+    name: "Lepakshi Handicrafts Wooden Kondapalli Vegetable cart",
+    // category: "Dorothy Perkins",
+    ratingValue: 4,
+    totalRating: 50,
+    price: 12,
+    currency: "$",
+    image: images.product14,
+    discount: '-20%'
+},
+{
+    name: "Lepakshi Handicrafts Wooden Etikoppaka Home Decorative Kissan (Farmer) Family Dolls",
+    // category: "Dorothy Perkins",
+    ratingValue: 4,
+    totalRating: 50,
+    price: 12,
+    currency: "$",
+    image: images.product15,
+    discount: '-20%'
+},
+{
+    name: "Lepakshi Handicrafts Clay Home Decorative Full Elephant Hanging Pair (Right Trunk and Left Trunk)",
+    // category: "Dorothy Perkins",
+    ratingValue: 4,
+    totalRating: 50,
+    price: 12,
+    currency: "$",
+    image: images.product16,
+    discount: '-20%'
+}
+]
 
 export const banner = {
     image: images.bigBanner,
@@ -51,20 +82,20 @@ export const categories = [
     {
         "name": "Women",
         "subcategories": [{
-            "name": "New",
-            "image": images.image4
+            "name": "Agri Inputs",
+            "image": images.product17
         },
         {
-            "name": "Clothing",
-            "image": images.image1
+            "name": "Electronics",
+            "image": images.product18
         },
         {
-            "name": "Shoes",
-            "image": images.image2
+            "name": "Toys & Games",
+            "image": images.product11
         },
         {
-            "name": "Accessories",
-            "image": images.image3
+            "name": "Home & Kitchen",
+            "image": images.product16
         },
         ]
     },
@@ -113,7 +144,7 @@ export const categories = [
 ];
 
 export const categoryBanner = {
-    title: "SUMMER SALES",
+    title: "SALES",
     subTitle: "Up to 50% off"
 }
 
